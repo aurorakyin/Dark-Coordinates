@@ -34,9 +34,9 @@ def after_request(response):
 
 
 @app.route("/")
-def homepage():
+def index():
     """Homepage with navbar and world map etc"""
-    return render_template("homepage.html")
+    return render_template("index.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
