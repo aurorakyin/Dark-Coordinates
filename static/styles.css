@@ -107,3 +107,32 @@ h6 {
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="directory.html">(directory)</a>
+    </li>
+    <li>
+      <div class="nav-item" class="dropdown">
+        <button class="dropbtn">how to</button>
+        <div class="dropdown-content">
+          <a class="nav-link" href="contact.html">get in contact with &#128123;</a>
+          <a class="nav-link" href="instruction.html">avoid contact with &#128123;</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mentalhaven.html">mental haven</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="me.html">me</a>
+    </li>
+  </ul>
+</div>
