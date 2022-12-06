@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bloody Mary
+{% endblock %}
+
+{% block main %}
+<h1>Bloody Mary</h1>
+
+<p id="fav" onclick="myFunction(fav)"><button class="addFavourites">Favorite me!</button></p>
+<p id="unfav" onclick="myFunction(unfav)"><button class="removeFavourites">..Unfavorite..</button></p>
+
+<p id="demo" onclick="myFunction()">Click me.</p>
+
+<script>
+function myFunction(fav) {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+function myFunction(fav) {
+  INSERT INTO favorites
+  VALUES (session_id, 'bloodymary');
+}
+</script>
