@@ -1,1 +1,25 @@
+{% extends "layout.html" %}
 
+{% block title %}
+    Mental Haven
+{% endblock %}
+
+{% block main %}
+    
+    <h1>Mental Haven</h1>
+    <h3>starting to get goosebumps because ghosts can be everywhere? tired of the scary stuff? refresh your eyes and brain with some adorableness!</h3>
+
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+{% endblock %}
+
+
+<center><p style="font-family:verdana">&#9759; so here are some reasons why sleep is (apparently) important for you &#9759;</p></center>
+<center><iframe src="https://www.medicalnewstoday.com/articles/325353" height="500px" width="80%" title="why-sleep-important" style="border:5px solid black;"></iframe></center>
