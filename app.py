@@ -151,7 +151,30 @@ def contact():
     return render_template("contact.html")
 
 
-@app.route("/bank", methods=["GET", "POST"])
+@app.route("/me", methods=["GET", "POST"])
 def me():
     """profile page"""
     return render_template("me.html")
+
+@app.route("/bloodymary", methods=["GET", "POST"])
+def bloodymary():
+    """bloody mary"""
+    return render_template("bloodymary.html")
+
+def favorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = session["userid"] AND favorite = 'bloodymary'")
+    # Ensure username exists and password is correct
+    if len(rows) != 0
+       return render_template("bloodymary.html")
+    
+    rows = db.execute("INSERT INTO favorites (userid, favorite) VALUES (?, ?)", session["userid"], bloodymary)
+    return render_template("bloodymary.html")
+
+def unfavorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = session["userid"] AND favorite = 'bloodymary'")
+    # Ensure username exists and password is correct
+    if len(rows) != 1
+       return render_template("bloodymary.html")
+    
+    rows = db.execute("DELETE FROM favorites WHERE userid = session ["userid"] AND favorite = 'bloodymary'")
+    return render_template("bloodymary.html")
