@@ -1,5 +1,3 @@
-pip install cs50
-
 import os
 
 from cs50 import SQL
