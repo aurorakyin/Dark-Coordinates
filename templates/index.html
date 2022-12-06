@@ -17,6 +17,15 @@ var mapProp= {
 };
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
+var marker = new google.maps.Marker({position: myCenter});
+
+marker.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+  content:"Hello World!"
+});
+
+infowindow.open(map,marker);
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOvVFPkjJs7g5xIT_PkC7fOs5BXCeZcd0&callback=myMap"></script>
