@@ -25,7 +25,25 @@ var infowindow = new google.maps.InfoWindow({
   content:"Hello World!"
 });
 
-infowindow.open(map,marker);
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+});
+
+google.maps.event.addListener(map, 'click', function(event) {
+  placeMarker(map, event.latLng);
+});
+
+function placeMarker(map, location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Latitude: ' + location.lat() +
+    '<br>Longitude: ' + location.lng()
+  });
+  infowindow.open(map,marker);
+}
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOvVFPkjJs7g5xIT_PkC7fOs5BXCeZcd0&callback=myMap"></script>
