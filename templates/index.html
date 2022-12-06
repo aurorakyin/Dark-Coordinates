@@ -1,58 +1,10 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <link href="/css/styles.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dark Coordinates</title>
-    </head>
-    <body >
-      <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" role="navigation">
-        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;dark coordinates</a>
-        <ul>
-          <li><a class="nav-link" href="directory.html">(directory)</a></li>
-          <li><a href="">how to</a>
-            <ul class="dropdown">
-              <li><a class="nav-link" href="contact.html">get in contact with &#128123;</a></li>
-              <li><a class="nav-link" href="instruction.html">avoid contact with &#128123;</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link" href="mentalhaven.html">mental haven</a></li>
-          <li><a class="nav-link" href="me.html">me</a></li>
-          <li><a class="nav-link" href="login.html">login</a></li>
-        </ul>
-      </nav>
+{% block title %}
+    Homepage
+{% endblock %}
 
-        <center><h6 style="padding-top:15px; color: grey">[you know, I'd suggest you go down the list in the navbar, but then again, who am I to dictate what you do]</h6></center>
+{% block main %}
 
-        <h2 style="padding-top: 15px">Sleep? Sleep. SLEEP! Or else...</h2>
 
-        <div class="container">
-          <img class="center" src="sleephomepage.jpeg" alt="sleep sweet sleep">
-          <div class="overlay">
-            <div class="text">BOOOO! BE SCARED!</div>
-          </div>
-        </div>
-
-        <br>
-        <center><em><b>"Who doesn't want to sleep like this right now?"</b></em></center>
-        <br><br><br><br>
-        <h4 style="text-align:center;">&#129488; now, why are you here? why are we here? &#129488;</h4>
-        <hr class="solid">
-        <p style="text-align:center; padding-bottom: 30px">
-          Do you like sleeping? <br>
-          I like sleeping &#128554;. <br>
-          You should also like sleeping. <br>
-          Sleeping &#128564; is very important. <br>
-          We need sleeping to be happy and even to live. <br>
-          Without sleeping we wouldn’t be happy &#128557; and even live &#9904;. <br>
-          Is it clear yet how important sleeping is? Sleeping is very important. <br>
-          Here you will learn why we sleep, how to sleep, what can help you sleep, and what happens if you fail trying to sleep. <br>
-          &#128556;
-        </p>
-        <iframe src="https://createaclickablemap.com/map.php?&id=114790&maplocation=false&online=true" width="900" height="525" style="border: none;"></iframe>
-        <script>if (window.addEventListener){ window.addEventListener("message", function(event) { if(event.data.length >= 22) { if( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); } else if (window.attachEvent){ window.attachEvent("message", function(event) { if( event.data.length >= 22) { if ( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); } </script>
-    </body>
-</html>
+{% endblock %}
