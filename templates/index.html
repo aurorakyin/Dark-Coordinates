@@ -5,6 +5,18 @@
 {% endblock %}
 
 {% block main %}
-
-
+<ul class="navbar-nav me-auto mt-2">
+  <li class="nav-item"><a class="nav-link" href="/directory">directory</a></li>
+  <li class="nav-item"><a class="nav-link">how to</a>
+      <ul class="dropdown">
+        <li class="nav-item"><a class="nav-link" href="contact.html">get in contact with &#128123;</a></li>
+        <li class="nav-item"><a class="nav-link" href="instruction.html">avoid contact with &#128123;</a></li>
+      </ul>
+  </li>
+  <li class="nav-item"><a class="nav-link" href="/mentalhaven">Mental Haven</a></li>
+  <li class="nav-item"><a class="nav-link" href="/me">me</a></li>
+</ul>
+<ul class="navbar-nav ms-auto mt-2">
+  <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+</ul>
 {% endblock %}
