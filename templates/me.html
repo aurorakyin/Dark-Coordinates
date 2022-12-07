@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Index
+    your boos
 {% endblock %}
 
 {% block main %}
 
-<h3>booname: {{ }}</h3>
+<h2>your boos</h2>
 
     <table width="100%">
         <thead>
@@ -15,9 +15,9 @@
             </tr>
         </thead>
         <tbody>
-            {% your boos %}
+            {% for story in likedstories %}
                 <tr>
-                    <td>{{ favorited["favorite"] }}</td>
+                    <td>{{ likedstories["favorite"] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
