@@ -5,19 +5,38 @@
 {% endblock %}
 
 {% block main %}
-    
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have wielded away " + localStorage.clickcount + " malicious spirits and strengthened yourself " + localStorage.clickcount + " times.";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, it works not";
+  }
+}
+</script>
+
     <h1>Mental Haven</h1>
     <h3>starting to get goosebumps because ghosts can be everywhere? tired of the scary stuff? refresh your eyes and brain with some adorableness!</h3>
 
-    <form action="/login" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
-        </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
-    </form>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/ut_8lkPwRU4?autoplay=1&mute=1"> </iframe>
+    <br>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/UwipvPhilHc?autoplay=1&mute=1"> </iframe>
+    <br>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/l73rmrLTHQc?autoplay=1&mute=1"> </iframe>    
+    <br>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/ddoPfZv3SXg?autoplay=1&mute=1"> </iframe>
+    <br><br>
+
+    <h3>just in case, also click on this however many times you feel necessary</h3>
+
+    <button onclick="clickCounter()" type="button">Power to me!</button>
+    <div id="result"></div>
+
 {% endblock %}
 
 
