@@ -18,29 +18,10 @@ Hovering over how to will lead to two options: get in contact with Ghost, and av
 
 Next, is Mental Haven. Clicking on this will redirect the user to a webpage with many youtube videos meant to help the user decompress and stop being scared after reading the ghost stories. We have included cute videos of dogs and at the bottom there is a button the user can press as much as he/she wants to decompress as well.
 
-
+Finally, there is the Me webpage, which will load a list of the favorited ghost stories that the user favorited. This will only work when the user is logged in and able to store his/her favorited ghost stories.
 
 ### darkcoord.db
-This database includes two tables, one with information about the users and the other.
-
-## Parts of the website
-- Register and Login page (where you become one of the boos!)
-
-| Login | Register |
-| :---: | :---: |
-| <img src="" width="400">  | <img src="" width="400">|
-
-- Homepage and directory
-
-| Homepage | Directory |
-| :---: | :---: | 
-| <img src="" width="400"> | <img src="" width = "400">
-
-- Avoid Contact and Get in Contact
-
-| Homepage | Directory |
-| :---: | :---: | 
-| <img src="" width="400"> | <img src="" width = "400">
+This database includes two tables, one with information about the users and the other. It is based off of the database in the finance HW.
 
 ## Video Walkthrough
 You can also watch us talk about the project on Youtube at this link:
