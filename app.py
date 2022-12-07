@@ -46,15 +46,18 @@ def register():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username")
+            flash("must provide username")
+            return render_template("register.html")
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password")
+            flash("must provide password")
+            return render_template("register.html")
 
         # Ensure confirmation was submitted
         elif not request.form.get("confirmation"):
-            return apology("must confirm password")
+            flash("must confirm password")
+            return render_template("register.html")
 
         # Ensure passwords match
         elif request.form.get("password") != request.form.get("confirmation"):
@@ -65,7 +68,8 @@ def register():
             rows = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get(
                 "username"), generate_password_hash(request.form.get("password")))
         except:
-            return apology("username taken")
+            flash("username taken")
+            return render_template("register.html")
 
         session["user_id"] = rows
 
@@ -89,18 +93,21 @@ def login():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username")
+            flash("must provide username")
+            return render_template("register.html")
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password")
+            flash("must provide password")
+            return render_template("register.html")
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password")
+            flash("invalid username and/or password")
+            return render_template("register.html")
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -136,13 +143,13 @@ def mentalhaven():
     return render_template("mentalhaven.html")
 
 
-@app.route("/avoid", methods=["GET", "POST"])
+@app.route("/avoid")
 def avoid():
     """how to avoid contact with ghosts"""
     return render_template("avoid.html")
 
 
-@app.route("/contact", methods=["GET", "POST"])
+@app.route("/contact")
 def contact():
     """how to get in contact with ghosts"""
     return render_template("contact.html")
@@ -151,7 +158,12 @@ def contact():
 @app.route("/me", methods=["GET", "POST"])
 def me():
     """profile page"""
-    return render_template("me.html")
+    user_id = session["user_id"]
+
+    likedstories = db.execute(
+        "SELECT favorite AS likedstory FROM favorites WHERE userid = ?", user_id)
+
+    return render_template("me.html", likedstories=likedstories)
 
 @app.route("/bloodymary", methods=["GET", "POST"])
 def bloodymary():
@@ -175,3 +187,72 @@ def unfavorite():
 
     rows = db.execute("DELETE FROM favorites WHERE userid = ? AND favorite = ?", session["userid"], bloodymary)
     return render_template("bloodymary.html")
+
+@app.route("/tokoloshe", methods=["GET", "POST"])
+def tokoloshe():
+    """tokoloshe"""
+    return render_template("bloodymary.html")
+
+def favorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], tokoloshe)
+    # Ensure username exists and password is correct
+    if len(rows) != 0:
+       return render_template("bloodymary.html")
+
+    rows = db.execute("INSERT INTO favorites (userid, favorite) VALUES (?, ?)", session["user_id"], tokoloshe)
+    return render_template("tokoloshe.html")
+
+def unfavorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], tokoloshe)
+    # Ensure username exists and password is correct
+    if len(rows) != 1:
+       return render_template("tokoloshe.html")
+
+    rows = db.execute("DELETE FROM favorites WHERE userid = ? AND favorite = ?", session["userid"], tokoloshe)
+    return render_template("tokoloshe.html")
+
+@app.route("/waverlyhills", methods=["GET", "POST"])
+def waverlyhills():
+    """waverlyhills"""
+    return render_template("waverlyhills.html")
+
+def favorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], waverlyhills)
+    # Ensure username exists and password is correct
+    if len(rows) != 0:
+       return render_template("waverlyhills.html")
+
+    rows = db.execute("INSERT INTO favorites (userid, favorite) VALUES (?, ?)", session["user_id"], waverlyhills)
+    return render_template("waverlyhills.html")
+
+def unfavorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], waverlyhills)
+    # Ensure username exists and password is correct
+    if len(rows) != 1:
+       return render_template("waverlyhills.html")
+
+    rows = db.execute("DELETE FROM favorites WHERE userid = ? AND favorite = ?", session["userid"], waverlyhills)
+    return render_template("waverlyhills.html")
+
+@app.route("/yamamurasadako", methods=["GET", "POST"])
+def yamamurasadako():
+    """yamamurasadako"""
+    return render_template("yamamurasadako.html")
+
+def favorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], yamamurasadako)
+    # Ensure username exists and password is correct
+    if len(rows) != 0:
+       return render_template("yamamurasadako.html")
+
+    rows = db.execute("INSERT INTO favorites (userid, favorite) VALUES (?, ?)", session["user_id"], yamamurasadako)
+    return render_template("yamamurasadako.html")
+
+def unfavorite():
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], yamamurasadako)
+    # Ensure username exists and password is correct
+    if len(rows) != 1:
+       return render_template("yamamurasadako.html")
+
+    rows = db.execute("DELETE FROM favorites WHERE userid = ? AND favorite = ?", session["userid"], yamamurasadako)
+    return render_template("yamamurasadako.html")
