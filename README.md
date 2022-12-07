@@ -25,4 +25,4 @@ This database includes two tables, one with information about the users and the 
 
 ## Video Walkthrough
 You can also watch us talk about the project on Youtube at this link:
-[Final Project: Dark Coordinates](link to be inserted)
+[Final Project: Dark Coordinates](https://youtu.be/keTVbQTpIn0)
