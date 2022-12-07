@@ -7,17 +7,10 @@
 {% block main %}
 <h1>Bloody Mary</h1>
 
-<p id="fav" onclick="myFunction(fav)"><button class="addFavourites">Favorite me!</button></p>
-<p id="unfav" onclick="myFunction(unfav)"><button class="removeFavourites">..Unfavorite..</button></p>
+<center><iframe src="https://www.hauntedrooms.co.uk/the-bloody-mary-legend" height="500px" width="80%" title="bloodymary" style="border:5px solid black;"></iframe></center>
 
-<p id="demo" onclick="myFunction()">Click me.</p>
 
-<script>
-function myFunction(fav) {
-  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-}
-function myFunction(fav) {
-  INSERT INTO favorites
-  VALUES (session_id, 'bloodymary');
-}
-</script>
+<p><button onclick="favorite()">Favorite me!</button>
+<button onclick="unfavorite()">..Unfavorite..</button></p>
+
+{% endblock %}
