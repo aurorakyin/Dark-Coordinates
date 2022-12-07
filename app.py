@@ -158,7 +158,7 @@ def me():
 def bloodymary():
     """bloody mary"""
     return render_template("bloodymary.html")
-
+'''
 def favorite():
     rows = db.execute("SELECT * FROM favorites WHERE userid = session["userid"] AND favorite = 'bloodymary'")
     # Ensure username exists and password is correct
@@ -176,3 +176,4 @@ def unfavorite():
     
     rows = db.execute("DELETE FROM favorites WHERE userid = session ["userid"] AND favorite = 'bloodymary'")
     return render_template("bloodymary.html")
+'''
