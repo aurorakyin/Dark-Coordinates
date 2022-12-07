@@ -1,1 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<h3>booname: {{ }}</h3>
+
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>liked stories</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% your boos %}
+                <tr>
+                    <td>{{ favorited["favorite"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
 
