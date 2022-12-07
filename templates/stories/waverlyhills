@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Waverly Hills Sanatorium
+{% endblock %}
+
+{% block main %}
+<h1>Waverly Hills Sanatorium</h1>
+
+<center><iframe src="https://www.americanhauntingsink.com/waverlytb" height="500px" width="80%" title="bloodymary" style="border:5px solid black;"></iframe></center>
+
+
+<p><button onclick="favorite()">Favorite me!</button>
+<button onclick="unfavorite()">..Unfavorite..</button></p>
+
+{% endblock %}

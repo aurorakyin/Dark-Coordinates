@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bloody Mary
+{% endblock %}
+
+{% block main %}
+<h1>Tokoloshe</h1>
+
+<center><iframe src="https://designinglife.biz/tokoloshe-south-african-lore/" height="500px" width="80%" title="bloodymary" style="border:5px solid black;"></iframe></center>
+
+
+<p><button onclick="favorite()">Favorite me!</button>
+<button onclick="unfavorite()">..Unfavorite..</button></p>
+
+{% endblock %}
