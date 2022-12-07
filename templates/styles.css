@@ -1,3 +1,15 @@
+body {
+  background-color: #999a98;
+}
+
+nav {
+	font-family: monospace;
+}
+
+h1 {
+  font-family: monospace;
+}
+
 nav {
 	font-family: monospace;
 }
