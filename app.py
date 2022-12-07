@@ -19,7 +19,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///user.db")
+db = SQL("sqlite:///darkcoor.db")
 
 
 @app.after_request
@@ -57,7 +57,7 @@ def register():
 
         # Ensure passwords match
         elif request.form.get("password") != request.form.get("confirmation"):
-            return apology("passwords no matchey")
+            return render_template("register.html")
 
         # Remember which user has logged in
         try:
@@ -75,7 +75,7 @@ def register():
     else:
         return render_template("register.html")
 
-      
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -121,8 +121,8 @@ def logout():
 
     # Redirect user to login form
     return render_template("login.html")
-  
-  
+
+
 @app.route("/directory")
 def directory():
     """Directory of ghosts and urban legends"""
@@ -132,7 +132,7 @@ def directory():
 @app.route("/mentalhaven")
 def mentalhaven():
     """Show mental haven with cute videos"""
-    return render_template("mentalhaven.html", rows=rows)
+    return render_template("mentalhaven.html")
 
 
 @app.route("/avoid", methods=["GET", "POST"])
@@ -158,19 +158,19 @@ def bloodymary():
     return render_template("bloodymary.html")
 
 def favorite():
-    rows = db.execute("SELECT * FROM favorites WHERE userid = session["userid"] AND favorite = 'bloodymary'")
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], bloodymary)
     # Ensure username exists and password is correct
-    if len(rows) != 0
+    if len(rows) != 0:
        return render_template("bloodymary.html")
-    
-    rows = db.execute("INSERT INTO favorites (userid, favorite) VALUES (?, ?)", session["userid"], bloodymary)
+
+    rows = db.execute("INSERT INTO favorites (userid, favorite) VALUES (?, ?)", session["user_id"], bloodymary)
     return render_template("bloodymary.html")
 
 def unfavorite():
-    rows = db.execute("SELECT * FROM favorites WHERE userid = session["userid"] AND favorite = 'bloodymary'")
+    rows = db.execute("SELECT * FROM favorites WHERE userid = ? AND favorite = ?", session["user_id"], bloodymary)
     # Ensure username exists and password is correct
-    if len(rows) != 1
+    if len(rows) != 1:
        return render_template("bloodymary.html")
-    
-    rows = db.execute("DELETE FROM favorites WHERE userid = session ["userid"] AND favorite = 'bloodymary'")
+
+    rows = db.execute("DELETE FROM favorites WHERE userid = ? AND favorite = ?", session["userid"], bloodymary)
     return render_template("bloodymary.html")
